@@ -7,12 +7,8 @@ Stack:
   - typescript
 - engine
   - express
+  - graphql
 - database
   - postgres
 - logger:
   - winston
-- routing
-  - tsoa
-
-env: 
-    - port: 80
