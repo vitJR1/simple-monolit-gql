@@ -1,10 +1,8 @@
 import { User } from '../entity/User'
 import { UserFilter } from '../filter/UserFilter'
 import { TokenPayload } from '../../../utils/TokenPayload'
-import { TsoaResponse } from '@tsoa/runtime'
 import jwt from 'jsonwebtoken'
 import { SECRET_KEY } from '../../../../config'
-import { plainToInstance } from 'class-transformer'
 import {ILike} from "typeorm";
 import {getPaginatedTable, PaginatedTable} from "../../common/PaginatedTable";
 import {UserTokenSchema} from "../schema/UserTokenSchema";

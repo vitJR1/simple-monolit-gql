@@ -2,7 +2,7 @@ import { UserHandler } from './handler/UserHandler'
 import { User } from './entity/User'
 import { UserFilter } from './filter/UserFilter'
 import {plainToInstance} from "class-transformer";
-import {Query, Resolver, Ctx, Authorized, Mutation, Args, Arg} from "type-graphql";
+import {Query, Resolver, Ctx, Authorized, Mutation, Args, Arg, Subscription} from "type-graphql";
 import {Context} from "../../utils/Context";
 import {UserTokenSchema} from "./schema/UserTokenSchema";
 import {UserAuthorizationSchema} from "./schema/UserAuthorizationSchema";
