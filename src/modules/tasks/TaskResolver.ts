@@ -23,9 +23,9 @@ export class TaskResolver {
 	async task (
 		@Arg('task', _ => Task, { nullable: true }) task: Task
 	): Promise<Task> {
-		return await this.handler.task(plainToInstance(Task, task)).then(r => {
-			pubSub.publish('TASK', r)
-			return r
+		return await this.handler.task(plainToInstance(Task, task)).then(task => {
+			pubSub.publish('TASK', task)
+			return task
 		})
 	}
 
@@ -33,7 +33,6 @@ export class TaskResolver {
     topics: 'TASK',
     nullable: true,
     filter: ({ context, payload }) => {
-		console.log('payload',payload, context)
       const notification = payload as Task
       return notification.executors?.some(e => e.user?.id === context.user.id) ?? false
     }
